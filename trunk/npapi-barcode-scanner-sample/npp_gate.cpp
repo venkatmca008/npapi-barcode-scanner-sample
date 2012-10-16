@@ -41,7 +41,7 @@
 // most are just empty stubs for this particular plugin 
 //
 #include "MyScannerPlugin.h"
-#include "../Common/npapi_common.h"
+#include "./common/npapi_common.h"
 #include <stddef.h>
 #include <stdio.h>
 

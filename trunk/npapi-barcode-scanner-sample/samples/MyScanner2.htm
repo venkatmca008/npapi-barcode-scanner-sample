@@ -1,0 +1,90 @@
+<HTML> 
+<HEAD> 
+<TITLE>NPAPI Sample: Barcode Scanner</TITLE> 
+<!--
+The barcode scanner NPAPI plugin exposes the MIME type
+"application/x-itc-myscanner"
+and following methods/properties:
+string:barcodedata
+ScannerNavigate(string data, string type, string time)
+property:enablebarcode=[true/false]
+
+first create e reference to the npapi DLL:
+	<embed id="embed1" type="application/x-itc-myscanner" hidden=true> </embed>
+then create a new javascript MyScanner object
+	myScannerObject = new MyScanner();
+now the scanner can be enabled
+	myScannerObject.enablebarcode=true;
+when a barocde is scanned, the code looks for a javascript function addScannerOutput() and invokes this with the barcode data
+	function addScannerOutput(newOutput)
+	{}
+	//you can change the value of an input field or whatever within the addScannerOutput
+the other function looked for is ScannerNavigate(data, type, time)
+	{}
+	//you can change the value of an input field or whatever within the ScannerNavigate Javascript function
+	
+-->
+<script> 
+
+var scanObj = null;
+
+function EnableScanner(isChecked)
+{
+	if (scanObj == null)
+	{
+    scanObj = new MyScanner();
+		if(scanObj == null)
+      alert('You have not Created the Sensor');
+    else
+		  theForm.chkEnableScanner.checked = true;
+	}
+	else
+	{
+    scanObj.enablebarcode=isChecked;
+	}
+}
+
+function ScannerNavigate(data, type, time) {
+    document.getElementById("bcData").value = data;
+    document.getElementById("bcType").value = type;
+    document.getElementById("bcTime").value = time;
+}
+
+function init() {
+    if (scanObj == null) {
+        scanObj = new MyScanner();
+        scanObj.enablebarcode = true;
+        //alert("done");
+    }
+}
+
+</script> 
+
+</HEAD>
+<!-- embed  the BarcodeScanner plugin object -->
+<embed id="embed1" type="application/x-itc-myscanner" hidden=true> </embed>
+
+<BODY onload="init()"> 
+<center> 
+<h1>NPAPI Sample: Barcode Scanner v.02</h1> 
+</center> 
+This page demonstrates the  use of NPAPI in HTML5 by way of a "Barcode Scanner" example.
+<form id='theForm'>
+<table border=1>
+<tr><td valign="top">
+Barcode Scanner
+(Scanner enabled: <input type="checkbox" name="chkEnableScanner" onclick="EnableScanner(theForm.chkEnableScanner.checked);"  checked="checked"></input>)
+</td></tr>
+<td>
+<input type=text value="" name="scanned_data" id="scanned_data" width=140>
+</td>
+<tr><td valign="top">
+Barcode Scan (NPAPI):<br>
+Data: <input type="text" cols="40" name="bcData" id="bcData"/><br>
+Type: <input type="text" cols="40" name="bcType" id="bcType"/><br>
+Time: <input type="text" cols="40" name="bcTime" id="bcTime"/><br>
+</td></tr>
+</table>
+</form>
+</BODY> 
+</HTML> 

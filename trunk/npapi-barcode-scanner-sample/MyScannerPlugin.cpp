@@ -1,7 +1,7 @@
 //MyScannerPlugin.cpp
 
 #include "MyScannerPlugin.h"
-#include "npfunctions.h"
+#include "./common/npfunctions.h"
 
 #include <stdio.h>
 #include <windows.h>
