@@ -6,10 +6,10 @@
 #define MAX_SCAN_BUFFER	2048
 #include "BarcodeData.h"	//a struct to hold barcode data
 
-#include "npapi.h"
-#include "npruntime.h"
-#include "nullplugin.h"
-#include "ScriptablePluginObjectBase.h"
+#include "./common/npapi.h"
+#include "./common/npruntime.h"
+#include "./common/nullplugin.h"
+#include "./common/ScriptablePluginObjectBase.h"
 
 #include "itcscan.h"
 #pragma comment (lib, "itcscan.lib")

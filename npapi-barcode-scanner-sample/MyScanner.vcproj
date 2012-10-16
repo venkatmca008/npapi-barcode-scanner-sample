@@ -411,11 +411,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Common\np_entry.cpp"
+				RelativePath=".\Common\np_entry.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\Common\npn_gate.cpp"
+				RelativePath=".\Common\npn_gate.cpp"
 				>
 			</File>
 			<File
@@ -423,7 +423,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Common\ScriptablePluginObjectBase.cpp"
+				RelativePath=".\Common\ScriptablePluginObjectBase.cpp"
 				>
 			</File>
 		</Filter>
@@ -441,27 +441,23 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Common\npapi.h"
+				RelativePath=".\Common\npapi.h"
 				>
 			</File>
 			<File
-				RelativePath="..\Common\npapi_common.h"
+				RelativePath=".\Common\npapi_common.h"
 				>
 			</File>
 			<File
-				RelativePath="..\Common\npfunctions.h"
+				RelativePath=".\Common\npfunctions.h"
 				>
 			</File>
 			<File
-				RelativePath="..\Common\npruntime.h"
+				RelativePath=".\Common\npruntime.h"
 				>
 			</File>
 			<File
-				RelativePath="..\Common\nptypes.h"
-				>
-			</File>
-			<File
-				RelativePath="..\Common\nullplugin.h"
+				RelativePath=".\Common\nptypes.h"
 				>
 			</File>
 			<File
@@ -469,7 +465,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\Common\ScriptablePluginObjectBase.h"
+				RelativePath=".\Common\ScriptablePluginObjectBase.h"
 				>
 			</File>
 		</Filter>
@@ -484,16 +480,7 @@
 			</File>
 		</Filter>
 		<File
-			RelativePath="..\MyScanner.htm"
-			>
-		</File>
-		<File
-			RelativePath="..\MyScanner1.htm"
-			DeploymentContent="true"
-			>
-		</File>
-		<File
-			RelativePath="..\MyScanner2.htm"
+			RelativePath=".\samples\MyScanner2.htm"
 			DeploymentContent="true"
 			>
 		</File>
