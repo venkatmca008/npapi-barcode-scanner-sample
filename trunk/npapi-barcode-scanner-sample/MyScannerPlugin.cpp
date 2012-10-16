@@ -259,7 +259,7 @@ bool MyScannerPluginObject::SetProperty(NPIdentifier name, const NPVariant *valu
 		else
 		{
 			DEBUGMSG(TRUE, (L"... arg is false\n"));
-			//  JAVASCRIPT: mySensor.enablebarcode=false;
+			//  JAVASCRIPT: MyScanner.enablebarcode=false;
 			this->SetScannerEnable(FALSE);
 		}
 
@@ -290,7 +290,7 @@ bool MyScannerPluginObject::Invoke(NPIdentifier name, const NPVariant *args,
 	NPIdentifier methodName =  NPN_GetStringIdentifier(szNameCmp);
 	NPN_MemFree(szNameCmp);
 
-	// mySensor.enablebarcode
+	// MyScanner.enablebarcode
 	if (methodName == sBarcodeEnabled_id)
 	{
 		//  Expect one argument which is a boolean (start / stop)
@@ -298,14 +298,14 @@ bool MyScannerPluginObject::Invoke(NPIdentifier name, const NPVariant *args,
 		{
 			if (NPVARIANT_TO_BOOLEAN(args[0]))
 			{
-				//  mySensor.enablebarcode(true);
+				//  MyScanner.enablebarcode(true);
 				//  Create a thread to monitor barcode reading			
 				m_bBarcodereadEnabled=TRUE;
 				SetScannerEnable(TRUE);
 			}
 			else
 			{
-				//  mySensor.enablebarcode(false);
+				//  MyScanner.enablebarcode(false);
 				m_bBarcodereadEnabled=FALSE;
 				SetScannerEnable(FALSE);
 			}
@@ -525,13 +525,13 @@ CMyScannerPlugin::CMyScannerPlugin(NPP pNPInstance) :
 	NPObject* document = NPVARIANT_TO_OBJECT(controllerVar);	
 	//#############################################################
 
-	NPObject *mySensorObject =NPN_CreateObject(m_pNPInstance,GET_NPOBJECT_CLASS(MyScannerPluginObject));
+	NPObject *MyScannerObject =NPN_CreateObject(m_pNPInstance,GET_NPOBJECT_CLASS(MyScannerPluginObject));
 	NPVariant v;
-	OBJECT_TO_NPVARIANT(mySensorObject, v);
+	OBJECT_TO_NPVARIANT(MyScannerObject, v);
 	NPIdentifier n = NPN_GetStringIdentifier("MyScanner");
 	NPN_SetProperty(m_pNPInstance, sWindowObj, n, &v);
 
-	NPN_ReleaseObject(mySensorObject);
+	NPN_ReleaseObject(MyScannerObject);
 	NPN_ReleaseObject(sWindowObj);
 	NPN_ReleaseObject(document);
 }
