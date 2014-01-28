@@ -199,7 +199,7 @@
 			/>
 			<DeploymentTool
 				ForceDirty="-1"
-				RemoteDirectory="\zkBrowser"
+				RemoteDirectory="\zkBrowser\plugins"
 				RegisterOutput="0"
 				AdditionalFiles=""
 			/>
