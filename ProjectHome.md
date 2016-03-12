@@ -1,0 +1,1 @@
+Example showing the use of NPAPI to run a background thread that invokes HTML5 browser Javascript code. In this code a hardware barcode scanner is used to read barcodes and invokes Javascript code on a windows mobile device running ZetaKey or Intermec HTML5 browser (webkit browsers).
